@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('short_description');
             $table->string('content');
             $table->string('image');
-            $table->integer('visited_count');
+            $table->integer('views');
             $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();
         });
