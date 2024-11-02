@@ -6,4 +6,5 @@
 {{--        <livewire:left-sidebar :is-main="true"/>--}}
         @yield("content")
     </main>
+    <x-footer />
 @endsection
