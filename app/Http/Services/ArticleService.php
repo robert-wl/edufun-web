@@ -3,7 +3,7 @@
 namespace App\Http\Services;
 
 use App\Models\Article;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Collection;
 
 class ArticleService
 {
@@ -14,8 +14,8 @@ class ArticleService
         $this->article = $article;
     }
 
-    public function getPopularArticles(): array
+    public function getPopularArticles(): Collection
     {
-        return $this->article->orderBy('views', 'desc')->get()->toArray();
+        return $this->article->orderBy('views', 'desc')->get();
     }
 }

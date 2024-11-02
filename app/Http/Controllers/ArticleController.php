@@ -21,7 +21,7 @@ class ArticleController extends Controller
         $popularArticles = $this->articleService->getPopularArticles();
 
         return view('pages.home', [
-            'popular-articles' => $popularArticles
+            'popularArticles' => $popularArticles
         ]);
     }
 }
