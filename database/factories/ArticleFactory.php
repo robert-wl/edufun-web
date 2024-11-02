@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Article;
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -18,7 +20,7 @@ class ArticleFactory extends Factory
      */
     public function definition(): array
     {
-        $user = User::get()->random();
+        $user = Category::get()->random()->users()->first();
 
         return [
             'user_id' => $user->id,
@@ -27,6 +29,7 @@ class ArticleFactory extends Factory
             'content' => $this->faker->paragraph(),
             'image' => $this->faker->imageUrl(),
             'views' => $this->faker->numberBetween(0, 1000),
+            'category_id' => $user->category_id,
         ];
     }
 }

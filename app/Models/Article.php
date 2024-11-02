@@ -12,8 +12,9 @@ use Illuminate\Notifications\Notifiable;
  * @mixin Builder
  *
  *
- * @property string $id
- * @property string $user_id
+ * @property integer $id
+ * @property integer $user_id
+ * @property integer $material_id
  * @property string $title
  * @property string $short_description
  * @property string $content
@@ -32,11 +33,17 @@ class Article extends Model
         'content',
         'image',
         'views',
-        'user_id'
+        'user_id',
+        'material_id'
     ];
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
     }
 }

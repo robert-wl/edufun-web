@@ -2,21 +2,24 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class UserSeeder extends Seeder
+class CategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $specialties = [1, 2];
+        Category::factory()->create([
+            'name' => 'Data Science',
+        ]);
 
-        foreach ($specialties as $id) {
-            User::factory()->create(['category_id' => $id]);
-        }
+        Category::factory()->create([
+            'name' => 'Network Security',
+        ]);
     }
 }

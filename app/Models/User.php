@@ -5,19 +5,20 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 /**
  * @mixin Builder
  *
- * @property string $id
+ * @property integer $id
+ * @property integer $category_id
  * @property string $name
  * @property string $email
  * @property string $email_verified_at
  * @property string $password
  * @property string $remember_token
- * @property string $specialty
  * @property string $created_at
  * @property string $updated_at
  */
@@ -34,7 +35,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'specialty'
+        'category_id'
     ];
 
     /**
@@ -58,5 +59,10 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    protected function specialty(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
     }
 }
