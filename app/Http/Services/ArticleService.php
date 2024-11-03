@@ -45,4 +45,11 @@ class ArticleService
     {
         return $this->article->orderBy('views', 'desc')->paginate(5);
     }
+
+    public function incrementArticleViews(int $id)
+    {
+        $article = $this->article->findOrFail($id);
+        $article->increment('views');
+        $article->save();
+    }
 }

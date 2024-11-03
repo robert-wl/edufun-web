@@ -46,6 +46,8 @@ class ArticleController extends Controller
     {
         $article = $this->articleService->getArticleById($id);
 
+        $this->articleService->incrementArticleViews($id);
+
         return view('pages.article', [
             'article' => $article
         ]);

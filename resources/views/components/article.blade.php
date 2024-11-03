@@ -1,4 +1,4 @@
-<div class="card mb-3 p-5">
+<div class="card mb-3 p-5 mx-5">
     <div class="row g-5 position-relative">
         <div class="col-md-4">
             <img src="{{ $article->image }}" class="img-fluid rounded-start m-2 rounded-3" alt="Card Image" style="height: 100%; object-fit: cover;">
