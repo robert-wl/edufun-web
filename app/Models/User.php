@@ -18,6 +18,7 @@ use Illuminate\Notifications\Notifiable;
  * @property string $email
  * @property string $email_verified_at
  * @property string $password
+ * @property string $image
  * @property string $remember_token
  * @property string $created_at
  * @property string $updated_at
@@ -35,7 +36,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'category_id'
+        'image',
+        'category_id',
     ];
 
     /**
