@@ -34,4 +34,9 @@ class ArticleService
     {
         return $this->article->findOrFail($id);
     }
+
+    public function getArticlesByUserId(int $userId): Collection
+    {
+        return $this->article->where('user_id', $userId)->get();
+    }
 }

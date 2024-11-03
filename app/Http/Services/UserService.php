@@ -20,4 +20,9 @@ class UserService
     {
         return $this->user->get();
     }
+
+    public function getUserById(int $id): User
+    {
+        return $this->user->findOrFail($id);
+    }
 }
