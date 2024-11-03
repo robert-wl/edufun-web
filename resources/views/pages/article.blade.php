@@ -2,9 +2,9 @@
 
 
 @section('content')
-    <h1 class="text-center my-5">{{ $article->category->name }}</h1>
+    <h1 class="text-center py-5">{{ $article->category->name }}</h1>
     <div class="d-flex flex-column align-items-center">
-        <img src="{{ $article->image }}" class="img-fluid rounded-start rounded-3 m-5 mb-2" alt="Card Image" style="width: 80%; object-fit: cover;">
+        <img src="{{ $article->image }}" class="img-fluid rounded-5 m-5 mb-2" alt="Card Image" style="width: 80%; object-fit: cover;">
         <div class="d-flex flex-column " style="width: 80%;">
             <p class="card-text">
                 <small class="text-black">{{ $article->created_at->format('Y-m-d') }} | By {{ $article->user->name }}</small>

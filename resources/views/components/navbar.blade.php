@@ -20,7 +20,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Writers</a>
+                    <a class="nav-link" href="{{ route('writers') }}">Writers</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/about-us">About Us</a>

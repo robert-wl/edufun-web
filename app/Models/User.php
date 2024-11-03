@@ -63,7 +63,7 @@ class User extends Authenticatable
         ];
     }
 
-    protected function specialty(): BelongsTo
+    protected function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
     }
