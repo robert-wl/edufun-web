@@ -2,8 +2,8 @@
 
 
 @section('content')
-    <img src="{{ asset('home-image.png') }}" class="img-fluid">
-    @foreach($newestArticles->take(2) as $article)
+    <h1 class="text-center my-5">{{ $category->name }}</h1>
+    @foreach($articles as $article)
         <x-article :article="$article" />
     @endforeach
 @endsection

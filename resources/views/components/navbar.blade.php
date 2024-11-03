@@ -14,8 +14,9 @@
                         Category
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Data Science</a></li>
-                        <li><a class="dropdown-item" href="#">Network Security</a></li>
+                        @foreach($categories as $category)
+                            <li><a class="dropdown-item" href="{{ route('articles', ['category' => $category->id]) }}">{{ $category->name }}</a></li>
+                        @endforeach
                     </ul>
                 </li>
                 <li class="nav-item">

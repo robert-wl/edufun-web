@@ -26,7 +26,7 @@ class ArticleFactory extends Factory
             'user_id' => $user->id,
             'title' => $this->faker->sentence(),
             'short_description' => $this->faker->sentence(),
-            'content' => $this->faker->paragraph(),
+            'content' => $this->faker->paragraphs(10, true),
             'image' => $this->faker->imageUrl(),
             'views' => $this->faker->numberBetween(0, 1000),
             'category_id' => $user->category_id,
