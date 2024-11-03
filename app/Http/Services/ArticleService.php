@@ -3,6 +3,7 @@
 namespace App\Http\Services;
 
 use App\Models\Article;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Collection;
 use Ramsey\Uuid\Type\Integer;
 
@@ -38,5 +39,10 @@ class ArticleService
     public function getArticlesByUserId(int $userId): Collection
     {
         return $this->article->where('user_id', $userId)->get();
+    }
+
+    public function getArticlesByPopularityPaginated(): LengthAwarePaginator
+    {
+        return $this->article->orderBy('views', 'desc')->paginate(5);
     }
 }

@@ -50,4 +50,13 @@ class ArticleController extends Controller
             'article' => $article
         ]);
     }
+
+    public function popular(): View|Factory|Application
+    {
+        $articles = $this->articleService->getArticlesByPopularityPaginated();
+
+        return view('pages.popular', [
+           'articles' => $articles
+        ]);
+    }
 }

@@ -23,10 +23,10 @@
                     <a class="nav-link" href="{{ route('writers') }}">Writers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/about-us">About Us</a>
+                    <a class="nav-link" href="{{ route('about') }}">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/popular">Popular</a>
+                    <a class="nav-link" href="{{ route('popular') }}">Popular</a>
                 </li>
             </ul>
         </div>
