@@ -22,12 +22,15 @@ class ArticleFactory extends Factory
     {
         $user = Category::get()->random()->users()->first();
 
+        $placeholder = 'https://picsum.photos/id/' . $this->faker->numberBetween(1, 1000) . '/640/480';
+
+
         return [
             'user_id' => $user->id,
             'title' => $this->faker->sentence(),
             'short_description' => $this->faker->sentence(),
             'content' => $this->faker->paragraphs(10, true),
-            'image' => $this->faker->imageUrl(),
+            'image' => $placeholder,
             'views' => $this->faker->numberBetween(0, 1000),
             'category_id' => $user->category_id,
         ];
