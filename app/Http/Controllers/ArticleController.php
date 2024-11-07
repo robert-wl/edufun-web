@@ -20,15 +20,6 @@ class ArticleController extends Controller
         $this->categoryService = $categoryService;
     }
 
-    public function home(): View|Factory|Application
-    {
-        $newestArticles = $this->articleService->getNewestArticles();
-
-        return view('pages.home', [
-            'newestArticles' => $newestArticles
-        ]);
-    }
-
     public function articles(Request $request): View|Factory|Application
     {
         $categoryId = filter_var($request->query('category'), FILTER_VALIDATE_INT);
